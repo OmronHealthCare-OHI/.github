@@ -1,10 +1,12 @@
 # .github
 
-Organisation-wide defaults for Luscii repositories.
+Organisation-wide defaults for OMRON Healthcare (OHI) repositories.
+
+This repository is a fork of [`Luscii/.github`](https://github.com/Luscii/.github). The rules stay identical to Luscii's apart from wording, so a change to them goes to both. Open PRs here with `gh pr create --repo OmronHealthCare-OHI/.github`: on a fork, `gh` targets the parent by default.
 
 ## Release notes
 
-[`.github/release-drafter.yml`](.github/release-drafter.yml) is the Release Drafter (v7) base that Luscii repositories extend. It groups each merged PR once, under the first category that matches its labels, and strips the conventional-commit prefix from each entry. Everything no other category takes lands under 🔧 Internal Changes, so the notes have no `What's Changed` heading.
+[`.github/release-drafter.yml`](.github/release-drafter.yml) is the Release Drafter (v7) base that OMRON repositories extend. It groups each merged PR once, under the first category that matches its labels, and strips the conventional-commit prefix from each entry. Everything no other category takes lands under 🔧 Internal Changes, so the notes have no `What's Changed` heading.
 
 | Category | Labels |
 |---|---|
@@ -24,7 +26,7 @@ Left out of the notes, and of version resolution: `skip-changelog` and `internal
 In the repository, `.github/release-drafter.yml`:
 
 ```yaml
-_extends: Luscii/.github:release-drafter.yml@1
+_extends: OmronHealthCare-OHI/.github:release-drafter.yml@1
 ```
 
 A repository that deploys a pre-release and promotes it after the deploy adds:
@@ -54,5 +56,3 @@ Luscii and OMRON repositories tag releases `X.Y.Z`, without a `v`: `1.4.2`, not 
 **The one exception is a Go module.** Go only resolves module versions from `vX.Y.Z` tags (`go install …@v1.4.2`), so a Go module sets `tag-template: "v$RESOLVED_VERSION"`, and its moving tags are `vX` and `vX.Y`.
 
 GitHub Actions are no exception: an action is pinned `@1`, like everything else.
-
-The `v1.0.0`, `v1` and `v1.0` tags in this repository come from before this rule. They are frozen: nothing moves them any more, and they go once no repository pins `@v1`.
