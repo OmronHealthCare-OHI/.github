@@ -1,9 +1,9 @@
-# Release Drafter base for Luscii repositories. Requires release-drafter v7
+# Release Drafter base for OMRON repositories. Requires release-drafter v7
 # (categories with `when`, `exclusive`, `type`).
 #
 # A repository extends it at a tag and sets only its release mode:
 #
-#   _extends: Luscii/.github:release-drafter.yml@1
+#   _extends: OmronHealthCare-OHI/.github:release-drafter.yml@1
 #   prerelease: true    # deploy-promoted: a deploy promotes the pre-release
 #   latest: false
 #
